@@ -1,0 +1,4 @@
+data:
+  train: "admin_jsonl"
+  labels: "labels_json"
+  debug: "debug_model"
