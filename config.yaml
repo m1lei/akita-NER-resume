@@ -8,6 +8,6 @@ output_dir: "./debug_model_checkpoints"
 model_name: "distilbert/distilbert-base-multilingual-cased"
 
 #аргументы для модели
-max_length_tok: 128
-per_device_train_batch_size: 1
+max_length_tok: 512
+per_device_train_batch_size: 8
 num_train_epochs: 10
