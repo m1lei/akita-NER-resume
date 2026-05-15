@@ -29,7 +29,7 @@ class DatasetPreprocessor:
             for lab_start, lab_end, tag in labels:
                 if start >= int(lab_start) and end <= int(lab_end):
                     if start == int(lab_start):
-                        token_label = f"B--{tag}"
+                        token_label = f"B-{tag}"
                     else:
                         token_label = f"I-{tag}"
                     break

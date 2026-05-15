@@ -1,12 +1,10 @@
-from inferece_pipeline import NERInferencePipeline
-from Normalize import Normalize
-from config import Config
+from src.inference.inferece_pipeline import NERInferencePipeline
+from src.inference.Normalize import Normalize
 
-config = Config.from_yaml('config.yaml')
 
 pipeline = NERInferencePipeline(
-    model_path=config.output_dir,
-    labels_path=config.output_file
+    model_path="/Users/maksim/PycharmProjects/rezume_NER/modelPavel/debug_model_checkpoints",
+    labels_path="/Users/maksim/PycharmProjects/rezume_NER/modelPavel/debug_model_checkpoints.json"
 )
 
 pipeline.load()
@@ -39,6 +37,6 @@ Junior Data Scientist
 
 result = pipeline.predict(text)
 
-norm = Normalize(result)#post-processing text
+norm = Normalize(result)
 
 norm.normalize()

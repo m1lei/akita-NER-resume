@@ -1,16 +1,23 @@
 Resume NER
 
-Исследовательский NER-проект для извлечения сущностей из резюме с помощью Transformer.
+Исследовательский ML-project для training and inference NER-models, которая извлекает сущности из текста резюме.
 
-В проекте существует собственный dataset состоящий из 40 синтетических резюме с labels размечанный в docanno - admin.jsonl
+Система поддерживает настройку через YAML-конфиг, работу с датасетами и запуск предсказаний на пользовательском тексте
 
-Модель обучается находить ключевые данные в тексте резюме:
+В проекте существует собственный dataset, состоящий из ~90 синтетических резюме с labels, размечанные в docanno - admin_2.jsonl
+
+Используется BIO разметка
+
+Модель обучается находить ключевые сущности в тексте резюме:
 
 NAME
 COMPANY
 POSITION
 SKILL
-
+LOCATION
+CONTACT 
+EDUCATION 
+SPECIALTY
 
 # Installation & Run
 
@@ -77,4 +84,48 @@ os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 uv sync
 uv run python main.py - запуск обучения
 uv run python src/inference/app.py - запуск inference
+```
+
+# Пример работы
+
+```text
+text resume: Анна Соколова
+Junior Data Scientist
+
+Опыт работы:
+- Стажёр в отделе аналитики, ООО "ТехноПрогресс" (2023–2024)
+  • Сбор и очистка данных с помощью pandas, numpy
+  • Построение простых моделей регрессии в scikit-learn
+  • Визуализация результатов в Matplotlib и Plotly
+
+Навыки:
+• Языки: Python, SQL, Bash
+• Библиотеки: pandas, scikit-learn, seaborn, Hugging Face Transformers
+• Инструменты: Git, Docker, Jupyter, FastAPI
+• ML: классификация, кластеризация, feature engineering, cross-validation
+• NLP: токенизация, NER, fine-tuning BERT, inference
+
+Образование:
+МГУ им. Ломоносова, Прикладная математика и информатика, бакалавр (2020–2024)
+
+Дополнительно:
+- Пет-проект: Telegram-бот для классификации новостей (Python + FastAPI + SQLite)
+- Сертификат: "Machine Learning Specialization" (Coursera, 2023)
+- Английский: B2 (Upper-Intermediate)
+```
+
+```text
+Ответ model:{'NAME': ['Анна Соколова'],
+ 'POSITION': ['Junior Data Scientist'], 
+ 'COMPANY': ['ТехноПрогресс'], 
+ 'SKILLS': ['Bash', 'Docker', 'FastAPI', 'Git', 'Hugging Face Transformers', 'Jupyter',
+            'ML', 'Matplotlib', 'NER', 'NLP', 'Plotly', 'Python', 'SQL', 'SQLite', 'Telegram-бот',
+             'Upper-Intermediate', 'cross-validation', 'feature engineering', 'fine-tuning BERT', 
+             'inference', 'numpy', 'pandas', 'scikit-learn', 'seaborn', 'Визуализация', 'Сбор', 
+             'классификации новостей', 'классификация', 'кластеризация', 'очистка данных', 'простых моделей регрессии',
+              'токенизация'],
+  'EDUCATION': ['МГУ им. Ломоносова'], 
+  'SPECIALTY': ['Прикладная математика и информатика']}
+
+
 ```
