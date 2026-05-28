@@ -4,7 +4,6 @@ from dataclasses import dataclass
 @dataclass
 class Config:
     train: str
-    labels: str
     output_dir: str
     output_file: str
     path_for_evalution: str

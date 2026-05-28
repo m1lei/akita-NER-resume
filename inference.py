@@ -1,10 +1,13 @@
 from src.inference.inferece_pipeline import NERInferencePipeline
 from src.inference.Normalize import Normalize
+from config import Config
+
+config = Config.from_yaml('config.yaml')
 
 
 pipeline = NERInferencePipeline(
-    model_path="/Users/maksim/PycharmProjects/rezume_NER/modelPavel/debug_model_checkpoints",
-    labels_path="/Users/maksim/PycharmProjects/rezume_NER/modelPavel/debug_model_checkpoints.json"
+    model_path=config.output_dir,
+    labels_path=config.output_file
 )
 
 pipeline.load()

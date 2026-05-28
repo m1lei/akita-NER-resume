@@ -61,7 +61,7 @@ uv run python main.py
 ## 4. Запуск inference
 
 ```bash
-uv run python src/inference/app.py
+uv run python inference.py
 ```
 
 ---

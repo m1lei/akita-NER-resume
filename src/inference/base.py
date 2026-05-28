@@ -4,7 +4,7 @@ from typing import Tuple, List
 class BasePredictor(ABC):
     """Абстрактный интерфейс для NER predictor(предсказателя)"""
     @abstractmethod
-    def predict(self, text: str) -> Tuple[list[int], list[str]]:
+    def predict(self, text: str) -> Tuple[list[str],list[int]]:
         """Предсказывает по сырому тексту"""
         pass
 

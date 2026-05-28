@@ -1,7 +1,7 @@
 import json
-from Loader import Loader
-from predictor import Predictor
-from Extractor import EntityExtractor
+from src.inference.Loader import Loader
+from src.inference.predictor import Predictor
+from src.inference.Extractor import EntityExtractor
 
 class NERInferencePipeline:
     def __init__(self, model_path: str, labels_path: str):

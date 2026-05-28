@@ -7,6 +7,7 @@ from src.evalute.NEREvaluation import NEREvaluation
 import json
 from transformers import AutoTokenizer
 from config import Config
+
 cfg = Config.from_yaml('config.yaml')
 
 

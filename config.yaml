@@ -1,11 +1,10 @@
 #пути
-train: "admin.jsonl"
-labels: "labels.json"
+train: "admin3.jsonl"
 output_file: "/Users/maksim/PycharmProjects/rezume_NER/modelPavel/pavel_labels.json"
 output_dir: "/Users/maksim/PycharmProjects/rezume_NER/modelPavel/debug_model_checkpoints"
 
 path_for_evalution: "admin3.jsonl"
-labels_for_evaluation: "/modelPavel/pavel_labels.json"
+labels_for_evaluation: "modelPavel/pavel_labels.json"
 #данные модели
 model_name: "DeepPavlov/rubert-base-cased"
 
