@@ -1,5 +1,5 @@
 from config import Config
-from src.Pipeline import NERPipeline
+from src.train.Pipeline import NERPipeline
 
 config = Config.from_yaml('config.yaml')
 

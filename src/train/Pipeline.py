@@ -1,10 +1,10 @@
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 import os
 
-from src.DatasetLoader import DatasetLoader
-from src.DatasetPreprocessor import DatasetPreprocessor
-from src.LabelsManager import LabelsManager
-from src.TrainerModel import TrainerModel
+from src.train.DatasetLoader import DatasetLoader
+from src.train.DatasetPreprocessor import DatasetPreprocessor
+from src.train.LabelsManager import LabelsManager
+from src.train.TrainerModel import TrainerModel
 
 
 

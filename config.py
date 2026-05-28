@@ -7,6 +7,8 @@ class Config:
     labels: str
     output_dir: str
     output_file: str
+    path_for_evalution: str
+    labels_for_evaluation: str
 
     model_name: str
 

@@ -1,6 +1,7 @@
 from datasets import Dataset
+from src.train.base import BaseDataPreprocessor
 
-class DatasetPreprocessor:
+class DatasetPreprocessor(BaseDataPreprocessor):
     def __init__(self):
         pass
 
@@ -13,7 +14,17 @@ class DatasetPreprocessor:
 
         return dataset
 
-    def tokenize_and_align_labels(self, data, tokenizer , label2id, max_length=128):
+    def tokenize_and_align_labels(self, data, tokenizer , label2id, max_length=256):
+        """
+        Токенизаторы (например, BERT) разбивают слова на под-токены: слово «обучение» может превратиться в ['обу', '##че', '##ние'].
+        Задача функции - перенести разметку (например, что слово «обучение» - это сущность TASK) на каждый из этих микро-токенов,
+        соблюдая формат BIO-тегирования
+        :param data:
+        :param tokenizer:
+        :param label2id:
+        :param max_length:
+        :return:
+        """
         text = data["text"]
         labels = data["label"]
 

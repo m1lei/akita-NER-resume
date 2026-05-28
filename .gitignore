@@ -6,6 +6,8 @@ dist/
 wheels/
 *.egg-info
 .idea
+.debug_model_checkpoints2
+modelPavel
 
 # Virtual environments
 .venv

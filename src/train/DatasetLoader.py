@@ -1,7 +1,7 @@
 import json
 
 class DatasetLoader:
-    def __init__(self, train: str, n:int = 40):
+    def __init__(self, train: str, n:int = 400):
         self.train = train # файл обучения
         self.n = n#кол-во записей которые берем из jsonl file
 
